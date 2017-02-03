@@ -14,3 +14,20 @@ var salaries = {
 };
 
 // ... ваш код выведет "Петя"
+
+function getHighest(obj){
+	var name = "Нет сотрудников";
+	var highest = 0;
+	for (var key in obj){
+		if (obj[key] >= highest) {
+			highest = obj[key];
+			name = key;
+		};
+	}
+	return name;
+}
+
+console.log(getHighest(salaries));
+
+salaries = {};
+console.log(getHighest(salaries));
